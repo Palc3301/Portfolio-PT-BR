@@ -1,234 +1,386 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-current="pt">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio</title>
-  <link rel="stylesheet" href="/CSS/style.css">
-  <link rel="icon" href="img/detalhe.svg" type="image/x-icon">
-
+  <title>Pedro Arruda — SDET | QA Automation Engineer</title>
+  <meta name="description" content="Pedro Arruda — SDET e QA Automation Engineer especializado em testes de API, integração e E2E em Java para sistemas financeiros de grande escala.">
+  <meta property="og:title" content="Pedro Arruda — SDET | QA Automation Engineer">
+  <meta property="og:description" content="Testes de API, integração e E2E em Java · Rest Assured · Cypress · Selenium · CI/CD">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pedroarruda.netlify.app/">
+  <meta property="og:image" content="https://pedroarruda.netlify.app/img/1659759141613.jfif">
+  <meta name="theme-color" content="#16121F">
+  <link rel="icon" href="img/detalhe.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script>
+    // Define o idioma antes da renderização para evitar "piscar" o idioma errado
+    (function () {
+      var lang = null;
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'pt' || q === 'en') lang = q;
+        if (!lang) lang = localStorage.getItem('lang');
+      } catch (e) { }
+      if (lang !== 'pt' && lang !== 'en') {
+        lang = (navigator.language || 'pt').toLowerCase().indexOf('pt') === 0 ? 'pt' : 'en';
+      }
+      document.documentElement.setAttribute('data-current', lang);
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    })();
+  </script>
 </head>
 
 <body>
+  <a class="skip" href="#conteudo"><span data-lang="pt">Pular para o conteúdo</span><span data-lang="en">Skip to content</span></a>
+
   <header class="header">
-    <img src="img/Pedro Arruda.svg" alt="nome">
-    <nav>
-      <ul class="header-menu">
-        <li><a href="#experiencia">Experiência</a></li>
-        <li><a href="#formacao">Formação</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a class="brand" href="#topo" aria-label="Pedro Arruda">
+        <img src="img/Pedro Arruda.svg" alt="Pedro Arruda" width="178" height="23">
+      </a>
+      <nav class="nav" aria-label="Seções">
+        <a href="#experiencia"><span data-lang="pt">Experiência</span><span data-lang="en">Experience</span></a>
+        <a href="#competencias"><span data-lang="pt">Competências</span><span data-lang="en">Skills</span></a>
+        <a href="#certificacoes"><span data-lang="pt">Certificações</span><span data-lang="en">Certifications</span></a>
+        <a href="#contato"><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="pt" aria-pressed="true" lang="pt-BR" title="Português">PT</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
+      </div>
+    </div>
   </header>
 
-  <main class="introducao">
-    <img class="my-photo" src="img/1659759141613.jfif" alt="perfil">
-    <div>
-      <h1>Analista de QA &<br>Desenvolvedor Back-End</h1>
-      <p class="localizacao"> Brasil - Campina Grande - PB</p>
-    </div>
-  </main>
-
-  <section class="experiencia" id="experiencia" aria-label="Experiência">
-    <h2 class="subtitulo">Experiência</h2>
-    <div>
-      <p class="experiencia-texto">Sou Analista de QA e Desenvolvedor Back-End, atualmente cursando Sistemas de Informação.
-        Possuo certificação <strong>ISTQB CTFL</strong> e experiência em automação de testes.
-        Como QA, acredito que a qualidade de software começa desde o início do processo de desenvolvimento.
-        Por isso, adoto a abordagem Shift Left, buscando integrar testes o mais cedo possível,
-        prevenindo e mitigando riscos antes mesmo que ocorram.
-        Sou comunicativo e colaborativo, atuando ao lado dos desenvolvedores para garantir que o time esteja alinhado
-        e focado em entregar alta qualidade.
-        No desenvolvimento back-end, tenho experiência significativa com o framework Spring Boot,
-        especialmente na criação de microsserviços e aplicação de padrões de projeto como DTO e MVC.
-      </p>
-
-      <div class="empresa">
-        <span class="empresa-ano">2024-2025</span>
-        <h3 class="empresa-titulo">DBC Company</h3>
-        <span class="empresa-titulo">QA - Analista de Qualidade</span>
-        <p class="empresa-texto">
-          Na DBC Company, atuei em projetos onde tive a oportunidade de trabalhar tanto com testes automatizados quanto manuais, 
-          adquirindo experiência em diferentes tipos de validação de software e em metodologias ágeis.
-          Após um período, fui alocado em um banco de grande, onde atuei como QA, 
-          com foco em automação de testes de APIs REST utilizando RestAssured, aplicando JUnit e TestNG para garantir a confiabilidade dos fluxos críticos.
-          <br><br>
-          Um desafio relevante que enfrentei foi a ausência de endpoint para exclusão de usuários. 
-          Para contornar essa limitação, sempre que possível manipulei dados via chamadas REST controladas; 
-          implementei scripts de banco/controlados pela suíte para remover a massa gerada ao final da execução, 
-          garantindo consistência, repetibilidade e preservação do ambiente de testes.
-          <br><br>
-          Nesse contexto, também desenvolvi testes de componentes, integração e unitários, apoiando diretamente as equipes de desenvolvimento em um ambiente de altas demandas, 
-          contribuindo para ampliar a cobertura e a robustez das aplicações.
-          <br><br>
-          Durante minha atuação na DBC, além de trabalhar no segmento financeiro, utilizei ferramentas como Selenium (Selenide, Selenium Grid), Cypress, Appium (BrowserStack) e JMeter; 
-          simulei cenários complexos com Wiremock; e gerei relatórios de execução com Allure Report.
-          <br><br>
-          Adotei práticas de BDD com Gherkin, organizei e gerenciei casos de teste através de Jira, Confluence e Zephyr Scale, garantindo rastreabilidade e alinhamento com o negócio. 
-          Também participei da manutenção de pipelines de CI/CD no GitLab, integrando testes automatizados ao ciclo de desenvolvimento de software.
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="hero-text">
+        <img class="hero-photo" src="img/1659759141613.jfif" alt="Foto de Pedro Arruda" width="96" height="96">
+        <h1 class="hero-name">Pedro Arruda</h1>
+        <p class="hero-role">SDET <span class="sep">/</span> QA Automation Engineer</p>
+        <p class="hero-lede">
+          <span data-lang="pt">Automação de testes de API, integração e E2E em Java para sistemas financeiros de grande escala, com qualidade construída desde o início do desenvolvimento.</span>
+          <span data-lang="en">API, integration and E2E test automation in Java for large-scale financial systems, with quality built in from the start of development.</span>
         </p>
-        <ul class="empresa-habilidades">
-          <li>Rest Assured</li>
-          <li>TestNG</li>
-          <li>JUnit</li>
-          <li>Selenium (Selenide, Selenium Grid)</li>
-          <li>Cypress</li>
-          <li>JMeter</li>
-          <li>Wiremock</li>
-          <li>Allure Report</li>
-          <li>Gherkin</li>
-          <li>BDD</li>
-          <li>Jira</li>
-          <li>Confluence</li>
-          <li>Zephyr Scale</li>
-          <li>GitLab CI/CD</li>
-          <li>Appium</li>
-          <li>BrowserStack</li>
+        <ul class="hero-facts">
+          <li><span data-lang="pt">Campina Grande, PB, Brasil (UTC-3), remoto</span><span data-lang="en">Campina Grande, PB, Brazil (UTC-3), remote</span></li>
+          <li><span data-lang="pt">Certificado ISTQB CTFL</span><span data-lang="en">ISTQB CTFL certified</span></li>
+          <li><span data-lang="pt">Inglês fluente (C1)</span><span data-lang="en">Fluent English (C1)</span></li>
         </ul>
-      </div>
-
-      <div class="empresa">
-        <span class="empresa-ano">2025</span>
-        <h3 class="empresa-titulo">TXAI Company</h3>
-        <span class="empresa-titulo">QA Tester</span>
-        <p class="empresa-texto">
-          Na TXAI Company, atuei como QA Tester desde as etapas iniciais do projeto, aplicando a abordagem 
-          Shift Left para identificar e prevenir defeitos o mais cedo possível no ciclo de desenvolvimento. 
-          Fui responsável por criar ciclos de testes estruturados, redigir cenários em BDD utilizando Gherkin 
-          e elaborar tabelas de risco para priorização dos testes.
-          <br><br>
-          Automatizei testes de front-end com Selenium, integrando os resultados ao Allure Report 
-          para proporcionar maior visibilidade das execuções. Além disso, implementei uma pipeline de CI/CD no GitLab 
-          que, a cada push na branch de desenvolvimento, gera automaticamente uma pasta com o relatório do Allure e envia uma notificação 
-          com o link direto para o Discord, permitindo feedbacks rápidos à equipe sobre possíveis falhas.
-          <br><br>
-          Participei ativamente das cerimônias de planejamento e refinamento, contribuindo para incorporar a qualidade 
-          em todas as etapas do processo de desenvolvimento. Atuei também na definição de critérios de aceite, execução de testes manuais 
-          quando necessário e suporte às equipes de desenvolvimento para resolução ágil de defeitos.
-        </p>
-        <ul class="empresa-habilidades">
-          <li>Selenium</li>
-          <li>Rest Assured</li>
-          <li>Allure Report</li>
-          <li>GitLab</li>
-          <li>BDD</li>
-          <li>Gherkin</li>
-          <li>Shift Left</li>
-          <li>Java</li>
-        </ul>
-      </div>
-
-      <div class="empresa">
-        <span class="empresa-ano">2024-2025</span>
-        <h3 class="empresa-titulo">Consultoria para empresa nos EUA</h3>
-        <span class="empresa-titulo">QA - Analista de Qualidade</span>
-        <p class="empresa-texto">
-          Tive a oportunidade de trabalhar na automação de testes de integração com JEST em um projeto de
-          locação de casas e apartamentos, utilizando APIs GraphQL e Node.js. Fui responsável por desenvolver testes
-          automatizados para garantir a integridade e confiabilidade de queries e mutations.
-        </p>
-        <ul class="empresa-habilidades">
-          <li>Jest</li>
-          <li>GraphQL</li>
-          <li>BDD</li>
-          <li>Gherkin</li>
-        </ul>
-      </div>
-
-      <div class="empresa">
-        <span class="empresa-ano">2022-2023</span>
-        <h3 class="empresa-titulo">NUTES - Núcleo de Tecnologias Estratégicas em Saúde</h3>
-        <span class="empresa-titulo">Estagiário</span>
-        <p class="empresa-texto">
-          Contribuí em um projeto no Núcleo de Tecnologias Estratégicas em Saúde (NUTES) da UEPB, focado no setor de
-          saúde.
-          Atuei no desenvolvimento mobile com Java e Kotlin, utilizando o framework Spring Boot e o banco NoSQL MongoDB
-          para operações de backend. Apoiei a construção de soluções escaláveis para aplicações em saúde.
-        </p>
-        <ul class="empresa-habilidades">
-          <li>Java</li>
-          <li>Kotlin</li>
-          <li>Spring Boot</li>
-          <li>MongoDB</li>
-        </ul>
-      </div>
-
-      
-    </div>
-  </section>
-
-  <section class="formacao" id="formacao" aria-label="Formação">
-    <div class="formacao-container">
-      <h2 class="subtitulo">Formação</h2>
-
-      <div>
-        <p class="formacao-texto">Sou estudante de <strong>Bacharelado</strong> em <strong>Sistemas de Informação</strong>
-          na UNIFACISA,
-          dedicado a aprimorar continuamente meus conhecimentos na área de tecnologia.
-          Além da formação acadêmica, busco ativamente cursos intensivos de programação para me manter atualizado.
-        </p>
-
-
-        <ul class="faculdade-lista">
-          <li class="faculdade">
-            <span class="faculdade-tipo">Bacharelado</span>
-            <h3 class="faculdade-curso">Sistemas de Informação</h3>
-            <span class="faculdade-instituicao">UNIFACISA</span>
-          </li>
-        </ul>
-
-        <div class="formacao-extra">
-          <div class="cursos">
-            <h3>Cursos Intensivos</h3>
-            <ul>
-
-              <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:6987781917790081024/"
-                  target="_blank">CTFL - Certified Tester Foundation Level - ISTQB</a> </li>
-              <li><a href="https://testautomationu.applitools.com/certificate/?id=295f5b86" target="_blank">Mobile
-                  Testing with Appium and Java: From Setup to Execution</a></li>
-              <li><a
-                  href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0MjY1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzYyNTU2Nl83ODYzMTI0MTczMzI2MzgyNjg1NC5wbmciLCJ1c2VybmFtZSI6IlBlZHJvIEFycnVkYSBMdW5hICJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7232%2FIntroduction-to-JMeter%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1392616464793788420&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVz3XxCg03LMg18k%2ByrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDALOYahxBAAAA"
-                  target="_blank">Introduction to JMeter</a></li>
-              <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7245412898825490433/"
-                  target="_blank">DBC Company</a></li>
-              <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7237139629055856641/"
-                  target="_blank">DBC Company - Hackaton</a></li>
-              <li><a href="https://www.udemy.com/certificate/UC-34ac67d8-1191-465d-be5f-e6dfa2bf7443/"
-                  target="_blank">Java Object-Oriented Programming + Spring Boot</a> <span>54.5h</span></li>
-              <li> <a
-                  href="https://c46e136a583f7e334124-ac22991740ab4ff17e21daf2ed577041.ssl.cf1.rackcdn.com/Certificate/ScrumFundamentalsCertified-PedroArruda-919020.pdf"
-                  target="_blank">Scrum Fundamentals Certified - SCRUMstudy</a></li>
-
-            </ul>
-
-          </div>
-          <div class="idiomas">
-            <h3>Idiomas</h3>
-            <ul>
-              <li>Inglês / <span>Avançado</span></li>
-              <li>Espanhol / <span>Básico</span></li>
-            </ul>
-          </div>
-
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contato"><span data-lang="pt">Entrar em contato</span><span data-lang="en">Get in touch</span></a>
+          <a class="btn btn-ghost" data-lang="pt" href="docs/Pedro-Arruda-Curriculo-PT-BR.pdf" download>Baixar currículo (PDF)</a>
+          <a class="btn btn-ghost" data-lang="en" href="docs/Pedro-Arruda-Resume-EN.pdf" download>Download resume (PDF)</a>
         </div>
       </div>
 
-  </section>
+      <figure class="suite" aria-label="Cenário BDD">
+        <div class="suite-bar">
+          <span class="suite-file">pedro_arruda.feature</span>
+          <span class="suite-status" aria-live="polite"><span data-lang="pt">executando</span><span data-lang="en">running</span></span>
+        </div>
+        <div class="suite-code" data-lang="pt">
+          <p class="ln"><span class="kw">Funcionalidade:</span> Qualidade desde o primeiro commit</p>
+          <p class="ln i1"><span class="kw">Cenário:</span> Contratar um SDET</p>
+          <p class="ln i2 step"><span class="kw">Dado</span> um sistema financeiro de grande escala</p>
+          <p class="ln i2 step"><span class="kw">E</span> testes de API, UI e E2E em Java</p>
+          <p class="ln i2 step"><span class="kw">Quando</span> a pipeline roda a cada push</p>
+          <p class="ln i2 step"><span class="kw">Então</span> os defeitos aparecem antes dos usuários</p>
+        </div>
+        <div class="suite-code" data-lang="en">
+          <p class="ln"><span class="kw">Feature:</span> Quality from the first commit</p>
+          <p class="ln i1"><span class="kw">Scenario:</span> Hire an SDET</p>
+          <p class="ln i2 step"><span class="kw">Given</span> a large-scale financial system</p>
+          <p class="ln i2 step"><span class="kw">And</span> API, UI and E2E tests in Java</p>
+          <p class="ln i2 step"><span class="kw">When</span> the pipeline runs on every push</p>
+          <p class="ln i2 step"><span class="kw">Then</span> defects surface before users do</p>
+        </div>
+        <figcaption class="suite-result">
+          <span data-lang="pt">1 cenário (1 aprovado) · 4 passos (4 aprovados)</span>
+          <span data-lang="en">1 scenario (1 passed) · 4 steps (4 passed)</span>
+        </figcaption>
+      </figure>
+    </section>
 
-  <footer class="footer" id="contato">
-    <div class="footer-container">
-      <p class="footer-texto">Estou disponível para novos projetos. Entre em contato e podemos marcar uma conversa.</p>
-      <ul class="footer-contato">
-        <li><a href="mailto:pedroarruda8@live.com">pedroarruda8@live.com</a></li>
+    <!-- SOBRE -->
+    <section class="block" id="sobre" aria-labelledby="sobre-t">
+      <h2 class="block-title" id="sobre-t"><span data-lang="pt">Sobre</span><span data-lang="en">About</span></h2>
+      <div class="block-body prose">
+        <p data-lang="pt">SDET e QA Automation Engineer com mais de 3 anos em engenharia de software, especializado em automação de testes de API, integração e end-to-end (E2E) em Java para sistemas financeiros de grande escala, incluindo projeto em parceria com o <strong>Banco Central do Brasil</strong>.</p>
+        <p data-lang="en">SDET and QA Automation Engineer with 3+ years in software engineering, specialized in API, integration, and end-to-end (E2E) test automation in Java for large-scale financial systems, including a project in partnership with <strong>Brazil's Central Bank</strong> (Banco Central do Brasil).</p>
+        <p data-lang="pt">Entrego suítes automatizadas em todas as camadas com Rest Assured, Spring Test, Cypress com Cucumber, Selenium e Appium, executadas em pipelines GitLab CI/CD com relatórios Allure, aplicando Shift-Left e BDD para construir qualidade desde o início.</p>
+        <p data-lang="en">I deliver automated suites across every layer with Rest Assured, Spring Test, Cypress with Cucumber, Selenium, and Appium, running in GitLab CI/CD pipelines with Allure reporting, and apply Shift-Left and BDD practices so quality is built in from day one.</p>
+        <p data-lang="pt">Tenho base em desenvolvimento backend (Spring Boot, MongoDB, MySQL), uso IA no QA com revisão crítica de cada saída, oriento estagiários e colaboro remotamente com time dos EUA. Baseado no Brasil (UTC-3), com bom alinhamento com os horários comerciais dos EUA e da Europa.</p>
+        <p data-lang="en">I have a backend development background (Spring Boot, MongoDB, MySQL), use AI-assisted QA with critical review of every output, mentor interns, and collaborate remotely with a U.S. team. Based in Brazil (UTC-3), with solid overlap with U.S. and European business hours.</p>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="block" id="experiencia" aria-labelledby="exp-t">
+      <h2 class="block-title" id="exp-t"><span data-lang="pt">Experiência</span><span data-lang="en">Experience</span></h2>
+      <div class="block-body">
+        <ol class="timeline">
+
+          <li class="job">
+            <p class="job-meta"><span data-lang="pt">Set 2025 – Presente · Remoto</span><span data-lang="en">Sep 2025 – Present · Remote</span></p>
+            <h3 class="job-role">Quality Analyst (QA Automation / SDET)</h3>
+            <p class="job-company">iLAB</p>
+            <ul class="job-points" data-lang="pt">
+              <li>Engenharia de qualidade para sistemas financeiros de dados de grande escala, em projeto realizado em parceria com o Banco Central do Brasil.</li>
+              <li>Projeto, desenvolvimento e manutenção de suítes de testes automatizados em toda a stack: Spring Test e Rest Assured para testes de contrato, componente e integração no backend; Cypress com Cucumber para UI e componentes; Selenium para fluxos E2E; e JUnit para testes unitários.</li>
+              <li>Criação e validação de cenários BDD em Gherkin junto com negócio e engenharia, alinhando critérios de aceite e reduzindo ambiguidades antes da implementação.</li>
+              <li>Análise dos resultados das pipelines de CI/CD para identificar a causa raiz das falhas, execução de testes manuais quando necessário e reporte e triagem de defeitos no Jira.</li>
+              <li>Integração do Allure Report às suítes e acompanhamento de métricas de qualidade (criticidade e prioridade de defeitos, volume de execuções, defeitos encontrados), com relatórios de fácil leitura para os stakeholders.</li>
+              <li>Uso de assistentes de IA para acelerar a escrita de cenários Gherkin, a preparação de massa de dados e código base, validando cada saída contra os requisitos e as convenções do projeto.</li>
+              <li>Delegação de tarefas a estagiários e revisão de suas entregas, com orientação em design de testes, BDD e boas práticas de automação; participação em todas as cerimônias ágeis com mentalidade Shift-Left.</li>
+            </ul>
+            <ul class="job-points" data-lang="en">
+              <li>Quality engineering for large-scale financial data systems in a project delivered in partnership with Brazil's Central Bank (Banco Central do Brasil).</li>
+              <li>Design, develop, and maintain automated test suites across the full stack: Spring Test and Rest Assured for backend contract, component, and integration tests; Cypress with Cucumber for UI and component tests; Selenium for E2E flows; and JUnit for unit tests.</li>
+              <li>Author and validate BDD scenarios in Gherkin together with business and engineering, aligning acceptance criteria and reducing requirement ambiguity before implementation starts.</li>
+              <li>Analyze CI/CD pipeline results to identify root causes of failures, run manual tests when needed, and report and triage defects in Jira, improving release predictability.</li>
+              <li>Integrate Allure Report into the automated suites and track quality metrics (defect criticality and priority, test execution volume, defects found), giving stakeholders reports they can easily interpret.</li>
+              <li>Use AI assistants to accelerate Gherkin scenario drafting, test data preparation, and boilerplate code, validating every output against requirements and project conventions before adoption.</li>
+              <li>Delegate tasks to interns and review their deliverables, mentoring them on test design, BDD, and automation best practices; take part in all Agile ceremonies with a Shift-Left mindset.</li>
+            </ul>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Java</li><li>Spring Test</li><li>Rest Assured</li><li>Cypress</li><li>Cucumber</li><li>Selenium</li><li>JUnit</li><li>Gherkin</li><li>GitLab CI/CD</li><li>Allure Report</li><li>Jira</li>
+            </ul>
+          </li>
+
+          <li class="job">
+            <p class="job-meta"><span data-lang="pt">Jun 2024 – Dez 2025 · Remoto</span><span data-lang="en">Jun 2024 – Dec 2025 · Remote</span></p>
+            <h3 class="job-role"><span data-lang="pt">QA Automation Engineer (Contrato part-time)</span><span data-lang="en">QA Automation Engineer (Part-time Contract)</span></h3>
+            <p class="job-company"><span data-lang="pt">Plataforma de aluguel dos EUA</span><span data-lang="en">U.S.-based rental platform</span></p>
+            <ul class="job-points" data-lang="pt">
+              <li>Atuação remota com uma plataforma americana de aluguel de casas e apartamentos, em inglês, junto ao time de engenharia dos EUA.</li>
+              <li>Projeto e automação de testes de integração com Jest cobrindo queries e mutations GraphQL em APIs Node.js, validando respostas e consistência de dados nos serviços principais da plataforma.</li>
+              <li>Proteção da integridade dos dados e da confiabilidade dos fluxos principais de aluguel na camada de API, ajudando o time a detectar regressões antes de chegarem aos usuários.</li>
+              <li>Estruturação de cenários de teste em Gherkin e comunicação assíncrona de resultados e defeitos entre fusos horários.</li>
+            </ul>
+            <ul class="job-points" data-lang="en">
+              <li>Remote engagement with a U.S.-based house and apartment rental platform, working in English alongside the U.S. engineering team.</li>
+              <li>Designed and automated integration tests with Jest covering GraphQL queries and mutations on Node.js APIs, validating responses and data consistency across the platform's core services.</li>
+              <li>Safeguarded data integrity and the reliability of core rental workflows at the API layer, helping the team catch regressions before they reached users.</li>
+              <li>Structured test scenarios in Gherkin and communicated results and defects asynchronously across time zones.</li>
+            </ul>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Jest</li><li>GraphQL</li><li>Node.js</li><li>Gherkin</li><li>BDD</li>
+            </ul>
+          </li>
+
+          <li class="job">
+            <p class="job-meta"><span data-lang="pt">Mar 2025 – Set 2025 · Remoto</span><span data-lang="en">Mar 2025 – Sep 2025 · Remote</span></p>
+            <h3 class="job-role"><span data-lang="pt">QA Tester (Automação de Testes)</span><span data-lang="en">QA Tester (Test Automation)</span></h3>
+            <p class="job-company">Grupo Txai</p>
+            <ul class="job-points" data-lang="pt">
+              <li>Entrada no projeto desde as etapas iniciais, aplicando Shift-Left para levar qualidade à fase de desenvolvimento e identificar problemas antes que crescessem.</li>
+              <li>Automação de testes de UI com Java e Selenium e de API com Rest Assured, com suítes de fácil manutenção para os fluxos críticos do projeto.</li>
+              <li>Criação de ciclos de teste estruturados e cenários BDD em Gherkin, com priorização baseada em risco para concentrar a cobertura onde as falhas teriam maior impacto.</li>
+              <li>Implementação de pipeline GitLab CI/CD que executa os testes, gera relatórios Allure e envia notificações automáticas, dando feedback ao time a cada execução.</li>
+            </ul>
+            <ul class="job-points" data-lang="en">
+              <li>Joined the project from its early stages, applying a Shift-Left approach to bring quality into development and catch issues before they grew.</li>
+              <li>Automated UI tests with Java and Selenium and API tests with Rest Assured, building maintainable suites for the project's critical flows.</li>
+              <li>Created structured test cycles and BDD scenarios in Gherkin, using risk-based prioritization to focus coverage where failures would have the highest impact.</li>
+              <li>Implemented a GitLab CI/CD pipeline that runs the automated tests, generates Allure reports, and sends automated notifications, giving the team feedback on every run.</li>
+            </ul>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Java</li><li>Selenium</li><li>Rest Assured</li><li>Gherkin</li><li>GitLab CI/CD</li><li>Allure Report</li><li>Shift-Left</li>
+            </ul>
+          </li>
+
+          <li class="job">
+            <p class="job-meta"><span data-lang="pt">Jun 2024 – Fev 2025 · Brasil</span><span data-lang="en">Jun 2024 – Feb 2025 · Brazil</span></p>
+            <h3 class="job-role">Quality Analyst</h3>
+            <p class="job-company"><span data-lang="pt">DBC Company (promovido de Estagiário de QA)</span><span data-lang="en">DBC Company (promoted from QA Intern)</span></p>
+            <ul class="job-points" data-lang="pt">
+              <li>Selecionado para o programa "Vem Ser" da DBC, trilha intensiva de qualidade de software e automação de testes (Java, Rest Assured, Selenium, Cypress, BDD, CI/CD), e contratado como Quality Analyst ao final do programa.</li>
+              <li>Testes automatizados de APIs REST com Rest Assured, JUnit e TestNG e de UI web com Selenium (Selenide, Selenium Grid) e Cypress, incluindo testes unitários quando necessário.</li>
+              <li>Testes mobile com Appium no BrowserStack e testes funcionais e de performance em web, API e mobile, com JMeter para cenários de carga e WireMock simulando serviços externos.</li>
+              <li>Elaboração de planos de teste e cenários em Gherkin seguindo BDD, e gestão de casos de teste, execução e rastreabilidade com Jira, Confluence e Zephyr Scale, com execução contínua em GitLab CI/CD e Allure.</li>
+              <li>Participação no Hackathon da DBC, colaborando com um time multidisciplinar para entregar uma solução funcional em prazo curto.</li>
+            </ul>
+            <ul class="job-points" data-lang="en">
+              <li>Selected for DBC's "Vem Ser" program, an intensive track in software quality and test automation (Java, Rest Assured, Selenium, Cypress, BDD, CI/CD), and hired as Quality Analyst at the end of the program.</li>
+              <li>Developed automated tests for REST APIs with Rest Assured, JUnit, and TestNG, and for web UI with Selenium (Selenide, Selenium Grid) and Cypress, including unit tests where needed.</li>
+              <li>Automated mobile tests with Appium on BrowserStack and ran functional and performance tests across web, API, and mobile, using JMeter for load scenarios and WireMock to simulate external services.</li>
+              <li>Wrote test plans and Gherkin scenarios following BDD practices, and managed test cases, execution, and traceability with Jira, Confluence, and Zephyr Scale, with GitLab CI/CD and Allure running them continuously.</li>
+              <li>Took part in the DBC Hackathon, collaborating with a multidisciplinary team to deliver a working solution under a tight deadline.</li>
+            </ul>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Rest Assured</li><li>JUnit</li><li>TestNG</li><li>Selenide</li><li>Selenium Grid</li><li>Cypress</li><li>Appium</li><li>BrowserStack</li><li>JMeter</li><li>WireMock</li><li>Zephyr Scale</li>
+            </ul>
+          </li>
+
+        </ol>
+
+        <h3 class="sub-title"><span data-lang="pt">Experiências anteriores</span><span data-lang="en">Earlier experience</span></h3>
+        <ul class="earlier">
+          <li>
+            <p class="earlier-head"><strong>Junior Developer</strong> · NUTES, UEPB <span data-lang="pt">(unidade EMBRAPII)</span><span data-lang="en">(EMBRAPII unit)</span> <span class="earlier-date"><span data-lang="pt">Jun 2022 – Mar 2023</span><span data-lang="en">Jun 2022 – Mar 2023</span></span></p>
+            <p data-lang="pt">Desenvolvimento de funcionalidades mobile em Java e Kotlin para soluções de saúde e de serviços de backend com Spring Boot e MongoDB que sustentavam os aplicativos, em ambiente de P&amp;D. Essa vivência é a base do perfil SDET: entender como os sistemas testados são construídos, do backend ao cliente mobile.</p>
+            <p data-lang="en">Developed mobile features in Java and Kotlin for healthcare solutions and worked on Spring Boot and MongoDB backend services that supported the mobile apps, in an R&amp;D environment. This background is the foundation of the SDET profile: understanding how the systems under test are built, from backend to mobile client.</p>
+          </li>
+          <li>
+            <p class="earlier-head"><strong><span data-lang="pt">Monitor de Programação Orientada a Objetos (Java)</span><span data-lang="en">Teaching Assistant, Object-Oriented Programming (Java)</span></strong> · Unifacisa <span class="earlier-date"><span data-lang="pt">Nov 2022 – Fev 2023</span><span data-lang="en">Nov 2022 – Feb 2023</span></span></p>
+            <p data-lang="pt">Apoio a alunos em conceitos centrais de POO e na depuração e revisão de código Java em laboratório.</p>
+            <p data-lang="en">Supported students in core OOP concepts and helped debug and review Java code in lab sessions.</p>
+          </li>
+          <li>
+            <p class="earlier-head"><strong><span data-lang="pt">Desenvolvedor Backend</span><span data-lang="en">Backend Developer</span></strong> · Food Delivery System <span data-lang="pt">(projeto pessoal)</span><span data-lang="en">(personal project)</span> <span class="earlier-date">2022 – 2023</span></p>
+            <p data-lang="pt">API REST com Spring Boot, MySQL, Flyway e API Gateway, cobrindo restaurantes, cardápios e acompanhamento de pedidos.</p>
+            <p data-lang="en">REST API with Spring Boot, MySQL, Flyway, and API Gateway covering restaurants, menus, and order tracking.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- COMPETÊNCIAS -->
+    <section class="block" id="competencias" aria-labelledby="comp-t">
+      <h2 class="block-title" id="comp-t"><span data-lang="pt">Competências</span><span data-lang="en">Skills</span></h2>
+      <div class="block-body">
+        <dl class="skills">
+          <div><dt><span data-lang="pt">Automação de API e backend</span><span data-lang="en">API &amp; backend automation</span></dt>
+            <dd>Java, Rest Assured, Spring Test <span data-lang="pt">(contrato, componente e integração)</span><span data-lang="en">(contract, component, and integration)</span>, JUnit, TestNG, WireMock</dd></div>
+          <div><dt><span data-lang="pt">Automação de UI e E2E</span><span data-lang="en">UI &amp; E2E automation</span></dt>
+            <dd><span data-lang="pt">Cypress com Cucumber</span><span data-lang="en">Cypress with Cucumber</span>, Selenium (Selenide, Selenium Grid), Playwright</dd></div>
+          <div><dt><span data-lang="pt">Mobile e performance</span><span data-lang="en">Mobile &amp; performance</span></dt>
+            <dd><span data-lang="pt">Appium com BrowserStack</span><span data-lang="en">Appium with BrowserStack</span>, JMeter</dd></div>
+          <div><dt><span data-lang="pt">BDD e estratégia de testes</span><span data-lang="en">BDD &amp; test strategy</span></dt>
+            <dd><span data-lang="pt">Gherkin, Shift-Left, testes baseados em risco, planos de teste, testes manuais e funcionais</span><span data-lang="en">Gherkin, Shift-Left, risk-based testing, test plans, manual and functional testing</span></dd></div>
+          <div><dt><span data-lang="pt">APIs e dados</span><span data-lang="en">APIs &amp; data</span></dt>
+            <dd>REST, GraphQL, Postman, Jest, SQL (MySQL, PostgreSQL), MongoDB</dd></div>
+          <div><dt><span data-lang="pt">CI/CD e gestão</span><span data-lang="en">CI/CD &amp; management</span></dt>
+            <dd>GitLab CI/CD, GitHub Actions, Allure Report, Jira, Confluence, Zephyr Scale, <span data-lang="pt">Ágil / Scrum</span><span data-lang="en">Agile / Scrum</span></dd></div>
+          <div><dt>Backend</dt>
+            <dd>Spring Boot, Quarkus, <span data-lang="pt">microsserviços</span><span data-lang="en">microservices</span>, Clean Architecture</dd></div>
+          <div><dt><span data-lang="pt">QA com IA</span><span data-lang="en">AI-assisted QA</span></dt>
+            <dd><span data-lang="pt">Assistentes de IA para cenários, massa de dados e código base, validados contra os requisitos</span><span data-lang="en">AI assistants for scenarios, test data, and boilerplate, validated against requirements</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- CERTIFICAÇÕES -->
+    <section class="block" id="certificacoes" aria-labelledby="cert-t">
+      <h2 class="block-title" id="cert-t"><span data-lang="pt">Certificações</span><span data-lang="en">Certifications</span></h2>
+      <div class="block-body">
+        <ul class="certs">
+          <li class="cert cert-featured">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:6987781917790081024/" target="_blank" rel="noopener">
+              <span class="cert-name">ISTQB CTFL — Certified Tester Foundation Level</span>
+              <span class="cert-issuer">ISTQB</span>
+            </a>
+          </li>
+          <li class="cert">
+            <a href="https://www.credly.com/badges/bd832852-18a7-4223-83f8-40a67cccb645/linked_in_profile" target="_blank" rel="noopener">
+              <span class="cert-name">AWS Cloud Quest: Cloud Practitioner</span>
+              <span class="cert-issuer">Amazon Web Services · <span data-lang="pt">ago/2025</span><span data-lang="en">Aug 2025</span></span>
+            </a>
+          </li>
+          <li class="cert">
+            <a href="https://www.credly.com/badges/6ae21cf0-65fe-4335-bf9f-edd2594eea3a/linked_in_profile" target="_blank" rel="noopener">
+              <span class="cert-name">AWS Cloud Quest: Generative AI Practitioner</span>
+              <span class="cert-issuer">Amazon Web Services · <span data-lang="pt">nov/2025</span><span data-lang="en">Nov 2025</span></span>
+            </a>
+          </li>
+          <li class="cert">
+            <a href="https://www.linkedin.com/in/pedroarrudalc/details/certifications/" target="_blank" rel="noopener">
+              <span class="cert-name">Tricentis Tosca in the Cloud Smart Start</span>
+              <span class="cert-issuer">Tricentis · <span data-lang="pt">mar/2026</span><span data-lang="en">Mar 2026</span></span>
+            </a>
+          </li>
+          <li class="cert">
+            <a href="https://testautomationu.applitools.com/certificate/?id=295f5b86" target="_blank" rel="noopener">
+              <span class="cert-name">Mobile Testing with Appium and Java: From Setup to Execution</span>
+              <span class="cert-issuer">Test Automation University</span>
+            </a>
+          </li>
+          <li class="cert">
+            <a href="https://c46e136a583f7e334124-ac22991740ab4ff17e21daf2ed577041.ssl.cf1.rackcdn.com/Certificate/ScrumFundamentalsCertified-PedroArruda-919020.pdf" target="_blank" rel="noopener">
+              <span class="cert-name">Scrum Fundamentals Certified</span>
+              <span class="cert-issuer">SCRUMstudy</span>
+            </a>
+          </li>
+        </ul>
+
+        <h3 class="sub-title"><span data-lang="pt">Cursos e programas</span><span data-lang="en">Courses and programs</span></h3>
+        <ul class="certs certs-compact">
+          <li class="cert">
+            <a href="https://www.udemy.com/certificate/UC-34ac67d8-1191-465d-be5f-e6dfa2bf7443/" target="_blank" rel="noopener">
+              <span class="cert-name">Java Object-Oriented Programming + Spring Boot</span>
+              <span class="cert-issuer">Udemy · 54,5h</span>
+            </a>
+          </li>
+          <li class="cert">
+            <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0MjY1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzYyNTU2Nl83ODYzMTI0MTczMzI2MzgyNjg1NC5wbmciLCJ1c2VybmFtZSI6IlBlZHJvIEFycnVkYSBMdW5hICJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7232%2FIntroduction-to-JMeter%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1392616464793788420&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVz3XxCg03LMg18k%2ByrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDALOYahxBAAAA" target="_blank" rel="noopener">
+              <span class="cert-name">Introduction to JMeter</span>
+              <span class="cert-issuer">Simplilearn</span>
+            </a>
+          </li>
+          <li class="cert">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7245412898825490433/" target="_blank" rel="noopener">
+              <span class="cert-name"><span data-lang="pt">Programa Vem Ser — Qualidade de Software</span><span data-lang="en">Vem Ser Program — Software Quality</span></span>
+              <span class="cert-issuer">DBC Company</span>
+            </a>
+          </li>
+          <li class="cert">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7237139629055856641/" target="_blank" rel="noopener">
+              <span class="cert-name">Hackathon DBC</span>
+              <span class="cert-issuer">DBC Company</span>
+            </a>
+          </li>
+        </ul>
+        <p class="note">
+          <span data-lang="pt">Todas as credenciais podem ser verificadas no <a href="https://www.linkedin.com/in/pedroarrudalc/details/certifications/" target="_blank" rel="noopener">LinkedIn</a>.</span>
+          <span data-lang="en">All credentials can be verified on <a href="https://www.linkedin.com/in/pedroarrudalc/details/certifications/" target="_blank" rel="noopener">LinkedIn</a>.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- FORMAÇÃO -->
+    <section class="block" id="formacao" aria-labelledby="form-t">
+      <h2 class="block-title" id="form-t"><span data-lang="pt">Formação</span><span data-lang="en">Education</span></h2>
+      <div class="block-body edu">
+        <div>
+          <h3 class="edu-course"><span data-lang="pt">Bacharelado em Sistemas de Informação</span><span data-lang="en">B.Sc. in Information Systems</span></h3>
+          <p class="edu-meta"><span data-lang="pt">Unifacisa, Campina Grande, PB · conclusão prevista em 2027</span><span data-lang="en">Unifacisa, Campina Grande, PB · expected 2027</span></p>
+        </div>
+        <div>
+          <h3 class="edu-course"><span data-lang="pt">Idiomas</span><span data-lang="en">Languages</span></h3>
+          <p class="edu-meta" data-lang="pt">Português (nativo) · Inglês (fluente, C1)</p>
+          <p class="edu-meta" data-lang="en">English (fluent, C1) · Portuguese (native)</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact" id="contato">
+    <div class="contact-inner">
+      <h2 class="contact-title">
+        <span data-lang="pt">Vamos conversar sobre qualidade?</span>
+        <span data-lang="en">Let's talk about quality.</span>
+      </h2>
+      <p class="contact-text">
+        <span data-lang="pt">Aberto a oportunidades remotas no Brasil e no exterior. Respondo por e-mail ou LinkedIn.</span>
+        <span data-lang="en">Open to remote opportunities in Brazil and abroad. Reach me by email or LinkedIn.</span>
+      </p>
+      <ul class="contact-links">
+        <li><a href="mailto:pedroarrudaluna8@gmail.com">pedroarrudaluna8@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/pedroarrudalc/" target="_blank" rel="noopener">linkedin.com/in/pedroarrudalc</a></li>
+        <li><a href="https://github.com/Palc3301" target="_blank" rel="noopener">github.com/Palc3301</a></li>
         <li><a href="tel:+5583998384537">+55 (83) 99838-4537</a></li>
-        <li><a href="https://www.linkedin.com/in/pedroarrudalc/" target="_blank">@LinkedIn</a></li>
-        <li><a href="https://github.com/Palc3301" target="_blank">@GitHub</a></li>
       </ul>
-      <p class="footer-copy">Arruda. Alguns direitos reservados</p>
+      <p class="contact-copy">© <span id="ano">2026</span> Pedro Arruda</p>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
