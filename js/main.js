@@ -46,8 +46,17 @@
 
   /* ---------- Cabeçalho com borda ao rolar ---------- */
   var header = document.querySelector('.header');
+  var bar = document.querySelector('.progress span');
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
   function onScroll() {
     header.classList.toggle('is-scrolled', window.scrollY > 8);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+    // Destaca no menu a seção visível
+    var line = window.innerHeight * 0.35, active = -1;
+    targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top <= line) active = i; });
+    links.forEach(function (a, i) { a.classList.toggle('is-active', i === active); });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();

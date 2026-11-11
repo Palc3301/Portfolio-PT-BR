@@ -39,7 +39,7 @@
   <header class="header">
     <div class="header-inner">
       <a class="brand" href="#topo" aria-label="Pedro Arruda">
-        <img src="img/Pedro Arruda.svg" alt="Pedro Arruda" width="178" height="23">
+        <img src="img/logo-light.svg" alt="Pedro Arruda" width="178" height="23">
       </a>
       <nav class="nav" aria-label="Sections">
         <a href="#experiencia"><span data-lang="en">Experience</span><span data-lang="pt">Experiência</span></a>
@@ -48,14 +48,18 @@
         <a href="#contato"><span data-lang="en">Contact</span><span data-lang="pt">Contato</span></a>
       </nav>
       <div class="lang-switch" role="group" aria-label="Language / Idioma">
+        <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        <span class="lang-thumb" aria-hidden="true"></span>
         <button type="button" data-set-lang="en" aria-pressed="true" lang="en" title="English">EN</button>
         <button type="button" data-set-lang="pt" aria-pressed="false" lang="pt-BR" title="Português">PT</button>
       </div>
     </div>
+    <div class="progress" aria-hidden="true"><span></span></div>
   </header>
 
   <main id="conteudo">
     <!-- HERO -->
+    <div class="hero-band">
     <section class="hero" id="topo">
       <div class="hero-text">
         <img class="hero-photo" src="img/1659759141613.jfif" alt="Foto de Pedro Arruda" width="96" height="96">
@@ -104,6 +108,19 @@
         </figcaption>
       </figure>
     </section>
+    <section class="layers" aria-labelledby="layers-t">
+      <h2 class="layers-title" id="layers-t"><span data-lang="en">Test coverage across every layer</span><span data-lang="pt">Cobertura de testes em todas as camadas</span></h2>
+      <ol class="layers-list">
+          <li style="--i:1"><span class="layer-name"><span data-lang="en">Unit</span><span data-lang="pt">Unitário</span></span><span class="layer-tools"><span>JUnit</span></span></li>
+          <li style="--i:2"><span class="layer-name"><span data-lang="en">Component</span><span data-lang="pt">Componente</span></span><span class="layer-tools"><span>Spring Test</span><span>Cypress</span></span></li>
+          <li style="--i:3"><span class="layer-name"><span data-lang="en">Contract</span><span data-lang="pt">Contrato</span></span><span class="layer-tools"><span>Spring Test</span><span>Rest Assured</span></span></li>
+          <li style="--i:4"><span class="layer-name"><span data-lang="en">Integration</span><span data-lang="pt">Integração</span></span><span class="layer-tools"><span>Rest Assured</span><span>Jest</span></span></li>
+          <li style="--i:5"><span class="layer-name"><span data-lang="en">E2E</span><span data-lang="pt">E2E</span></span><span class="layer-tools"><span>Selenium</span><span>Cypress + Cucumber</span></span></li>
+          <li style="--i:6"><span class="layer-name"><span data-lang="en">Mobile</span><span data-lang="pt">Mobile</span></span><span class="layer-tools"><span>Appium</span><span>BrowserStack</span></span></li>
+          <li style="--i:7"><span class="layer-name"><span data-lang="en">Performance</span><span data-lang="pt">Performance</span></span><span class="layer-tools"><span>JMeter</span></span></li>
+      </ol>
+    </section>
+    </div>
 
     <!-- SOBRE -->
     <section class="block" id="sobre" aria-labelledby="sobre-t">
@@ -146,9 +163,9 @@
               <li>Use AI assistants to accelerate Gherkin scenario drafting, test data preparation, and boilerplate code, validating every output against requirements and project conventions before adoption.</li>
               <li>Delegate tasks to interns and review their deliverables, mentoring them on test design, BDD, and automation best practices; take part in all Agile ceremonies with a Shift-Left mindset.</li>
             </ul>
-            <ul class="tags" aria-label="Tools and practices / Ferramentas e práticas">
-              <li>Spring Test</li><li>Rest Assured</li><li>Cypress + Cucumber</li><li>Selenium</li><li>JUnit</li><li>Allure Report</li>
-              <li class="tag-practice"><span data-lang="en">Contract testing</span><span data-lang="pt">Testes de contrato</span></li><li class="tag-practice"><span data-lang="en">Financial data systems</span><span data-lang="pt">Sistemas financeiros</span></li><li class="tag-practice"><span data-lang="en">AI-assisted QA</span><span data-lang="pt">QA com IA</span></li><li class="tag-practice"><span data-lang="en">Intern mentoring</span><span data-lang="pt">Mentoria de estagiários</span></li>
+            <ul class="tags" aria-label="Highlights / Destaques">
+              <li>Spring Test</li><li>Rest Assured</li><li>Cypress + Cucumber</li><li>Selenium</li><li>JUnit</li>
+              <li><span data-lang="en">Contract testing</span><span data-lang="pt">Testes de contrato</span></li><li><span data-lang="en">AI-assisted QA</span><span data-lang="pt">QA com IA</span></li><li><span data-lang="en">Intern mentoring</span><span data-lang="pt">Mentoria de estagiários</span></li>
             </ul>
           </li>
 
@@ -168,9 +185,9 @@
               <li>Safeguarded data integrity and the reliability of core rental workflows at the API layer, helping the team catch regressions before they reached users.</li>
               <li>Structured test scenarios in Gherkin and communicated results and defects asynchronously across time zones.</li>
             </ul>
-            <ul class="tags" aria-label="Tools and practices / Ferramentas e práticas">
+            <ul class="tags" aria-label="Highlights / Destaques">
               <li>Jest</li><li>GraphQL</li><li>Node.js</li>
-              <li class="tag-practice"><span data-lang="en">API integration testing</span><span data-lang="pt">Testes de integração de API</span></li><li class="tag-practice"><span data-lang="en">U.S. team, in English</span><span data-lang="pt">Time dos EUA, em inglês</span></li><li class="tag-practice"><span data-lang="en">Async across time zones</span><span data-lang="pt">Assíncrono entre fusos</span></li>
+              <li><span data-lang="en">API integration testing</span><span data-lang="pt">Testes de integração de API</span></li><li><span data-lang="en">U.S. team, in English</span><span data-lang="pt">Time dos EUA, em inglês</span></li><li><span data-lang="en">Async across time zones</span><span data-lang="pt">Assíncrono entre fusos</span></li>
             </ul>
           </li>
 
@@ -190,9 +207,9 @@
               <li>Created structured test cycles and BDD scenarios in Gherkin, using risk-based prioritization to focus coverage where failures would have the highest impact.</li>
               <li>Implemented a GitLab CI/CD pipeline that runs the automated tests, generates Allure reports, and sends automated notifications, giving the team feedback on every run.</li>
             </ul>
-            <ul class="tags" aria-label="Tools and practices / Ferramentas e práticas">
+            <ul class="tags" aria-label="Highlights / Destaques">
               <li>Selenium</li><li>Rest Assured</li><li>GitLab CI/CD</li><li>Allure Report</li>
-              <li class="tag-practice"><span data-lang="en">Shift-Left from day one</span><span data-lang="pt">Shift-Left desde o início</span></li><li class="tag-practice"><span data-lang="en">Risk-based testing</span><span data-lang="pt">Testes baseados em risco</span></li><li class="tag-practice"><span data-lang="en">Pipeline built from scratch</span><span data-lang="pt">Pipeline criada do zero</span></li>
+              <li><span data-lang="en">Shift-Left</span><span data-lang="pt">Shift-Left</span></li><li><span data-lang="en">Risk-based testing</span><span data-lang="pt">Testes baseados em risco</span></li><li><span data-lang="en">Pipeline built from scratch</span><span data-lang="pt">Pipeline criada do zero</span></li>
             </ul>
           </li>
 
@@ -214,9 +231,9 @@
               <li>Wrote test plans and Gherkin scenarios following BDD practices, and managed test cases, execution, and traceability with Jira, Confluence, and Zephyr Scale, with GitLab CI/CD and Allure running them continuously.</li>
               <li>Took part in the DBC Hackathon, collaborating with a multidisciplinary team to deliver a working solution under a tight deadline.</li>
             </ul>
-            <ul class="tags" aria-label="Tools and practices / Ferramentas e práticas">
-              <li>TestNG</li><li>Selenide</li><li>Selenium Grid</li><li>Appium</li><li>BrowserStack</li><li>JMeter</li><li>WireMock</li><li>Zephyr Scale</li>
-              <li class="tag-practice"><span data-lang="en">Mobile testing</span><span data-lang="pt">Testes mobile</span></li><li class="tag-practice"><span data-lang="en">Performance testing</span><span data-lang="pt">Testes de performance</span></li><li class="tag-practice"><span data-lang="en">Test plans</span><span data-lang="pt">Planos de teste</span></li>
+            <ul class="tags" aria-label="Highlights / Destaques">
+              <li>TestNG</li><li>Selenide</li><li>Appium</li><li>BrowserStack</li><li>JMeter</li><li>WireMock</li>
+              <li><span data-lang="en">Mobile testing</span><span data-lang="pt">Testes mobile</span></li><li><span data-lang="en">Performance testing</span><span data-lang="pt">Testes de performance</span></li>
             </ul>
           </li>
 
