@@ -446,6 +446,13 @@ strong { font-weight: 700; color: var(--ink); }
   border-radius: 4px;
   background: var(--violet-soft);
   color: #3E2A66;
+  border: 1px solid transparent;
+}
+/* Práticas e contexto: contorno, para diferenciar das ferramentas */
+.tags .tag-practice {
+  background: transparent;
+  border-color: #CFC6DE;
+  color: var(--ink);
 }
 
 .earlier li { padding: 18px 0; border-top: 1px solid var(--line); }

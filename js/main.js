@@ -42,7 +42,7 @@
     });
   });
 
-  applyLang(root.getAttribute('data-current') === 'en' ? 'en' : 'pt', false);
+  applyLang(root.getAttribute('data-current') === 'pt' ? 'pt' : 'en', false);
 
   /* ---------- Cabeçalho com borda ao rolar ---------- */
   var header = document.querySelector('.header');
